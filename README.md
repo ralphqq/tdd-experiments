@@ -2,7 +2,7 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 6: Improving Functional Tests: Ensuring Isolation and Removing Voodoo Sleeps](http://www.obeythetestinggoat.com/book/chapter_explicit_waits_1.html)
+[Chapter 7: Working Incrementally](http://www.obeythetestinggoat.com/book/chapter_working_incrementally.html)
 
 ## Chapters Finished
 * [Chapter 1: Getting Django Set Up Using a Functional Test](http://www.obeythetestinggoat.com/book/chapter_01.html)
@@ -10,3 +10,4 @@ My output from following the lessons in the book [Test-Driven Development with P
 * [Chapter 3: Testing a Simple Home Page with Unit Tests](http://www.obeythetestinggoat.com/book/chapter_unit_test_first_view.html)
 * [Chapter 4: What Are We Doing with All These Tests? (And, Refactoring)](http://www.obeythetestinggoat.com/book/chapter_philosophy_and_refactoring.html)
 * [Chapter 5: Saving User Input: Testing the Database](http://www.obeythetestinggoat.com/book/chapter_post_and_database.html)
+* [Chapter 6: Improving Functional Tests: Ensuring Isolation and Removing Voodoo Sleeps](http://www.obeythetestinggoat.com/book/chapter_explicit_waits_1.html)
