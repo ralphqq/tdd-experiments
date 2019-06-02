@@ -110,7 +110,7 @@ class NewVisitorTest(LiveServerTestCase):
         # User 2 visits homepage
         # User 2 cannot see User 1's list
         self.browser.get(self.live_server_url)
-        page_text = self.find_element_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn(user_1_item_1, page_text)
         self.assertNotIn(user_1_item_2, page_text)
 
@@ -132,6 +132,6 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertNotIn(user_1_item_1, page_text)
         self.assertIn(user_2_item_1, page_text)
 
-        # Satisfied, both users go back to sleep
+        # S
         self.fail('Finish the test!')
 
