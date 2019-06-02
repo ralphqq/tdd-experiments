@@ -34,7 +34,7 @@ class NewVisitorTest(LiveServerTestCase):
                 time.sleep(0.5)
 
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
+    def test_can_start_a_list_for_one_user(self):
         # User visits homepage
         self.browser.get(self.live_server_url)
 
@@ -72,10 +72,66 @@ class NewVisitorTest(LiveServerTestCase):
         self.wait_for_row_in_list_table(expected_list_item_1)
         self.wait_for_row_in_list_table(expected_list_item_2)
 
-        # User wonders whether the site will remember her list.
+        # Satisfied, she goes back to sleep.
+
+
+    def test_multiple_users_can_start_lists_at_different_urls(self):
+        # User 1 starts a new list
+        # She enters two items into the list
+        self.browser.get(self.live_server_url)
+        input_box = self.browser.find_element_by_id('id_new_item')
+        user_1_item_1 = 'Get drunk like a skunk'
+        input_box.send_keys(user_1_item_1)
+        input_box.send_keys(Keys.ENTER)
+        expected_list_item_1 = f'1: {user_1_item_1}'
+        self.wait_for_row_in_list_table(expected_list_item_1)
+
+        input_box = self.browser.find_element_by_id('id_new_item')
+        user_1_item_2 = 'Be high in the sky'
+        input_box.send_keys(user_1_item_2)
+        input_box.send_keys(Keys.ENTER)
+        expected_list_item_2 = f'2: {user_1_item_2}'
+        self.wait_for_row_in_list_table(expected_list_item_1)
+        self.wait_for_row_in_list_table(expected_list_item_2)
+
+        # User 1 wonders whether the site will remember her list.
         # Then she sees the site has generated a unique URL for her
         # and there is some explanatory text to that effect.
-        self.fail('Finish the test!')
+        user_1_url = self.browser.current_url
+        self.assertRegex(user_1_url, '/lists/.+')
 
-        # She visits that URL - her to-do list is still there.
+        # User 2 visits site
+
+        ## Start a new browser session to make sure that no information
+        ## is coming through from cookies etc
+        self.browser.quit()
+        self.browser = webdriver.Firefox()
+        
+        # User 2 visits homepage
+        # User 2 cannot see User 1's list
+        self.browser.get(self.live_server_url)
+        page_text = self.find_element_by_tag_name('body').text
+        self.assertNotIn(user_1_item_1, page_text)
+        self.assertNotIn(user_1_item_2, page_text)
+
+        # User 2 starts a new list
+        input_box = self.browser.find_element_by_id('id_new_item')
+        user_2_item_1 = 'Buy some catfood'
+        input_box.send_keys(user_2_item_1)
+        input_box.send_keys(Keys.ENTER)
+        expected_list_item_1_user_2 = f'1: {user_2_item_1}'
+        self.wait_for_row_in_list_table(expected_list_item_1_user_2)
+
+        # User 2 gets his own unique URL
+        user_2_url = self.browser.current_url
+        self.assertRegex(user_2_url, '/lists/.+')
+        self.assertNotEqual(user_2_url, user_1_url)
+
+        # Again, there's no trace of User 1's list
+        page_text = self.find_element_by_tag_name('body').text
+        self.assertNotIn(user_1_item_1, page_text)
+        self.assertIn(user_2_item_1, page_text)
+
+        # Satisfied, both users go back to sleep
+        self.fail('Finish the test!')
 
