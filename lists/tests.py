@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from lists.models import Item
+from lists.models import Item, List
 
 
 class HomePageTest(TestCase):
@@ -10,18 +10,26 @@ class HomePageTest(TestCase):
         self.assertTemplateUsed(response, 'home.html')
 
 
-class ItemModelTest(TestCase):
+class ListAndItemModelTest(TestCase):
 
     def test_saving_and_retrieving_items(self):
+        test_list = List()
+        test_list.save()
+
         first_item = Item()
         text_1 = 'The first item ever'
         first_item.text = text_1
+        first_item.parent_list = test_list
         first_item.save()
 
         second_item = Item()
         text_2 = 'Item the second'
         second_item.text = text_2
+        second_item.parent_list = test_list
         second_item.save()
+
+        saved_list = List.objects.first()
+        self.assertEqual(saved_list, test_list)
 
         saved_items = Item.objects.all()
         self.assertEqual(saved_items.count(), 2)
@@ -30,6 +38,8 @@ class ItemModelTest(TestCase):
         second_saved_item = saved_items[1]
         self.assertEqual(first_saved_item.text, text_1)
         self.assertEqual(second_saved_item.text, text_2)
+        self.assertEqual(first_saved_item.parent_list, test_list)
+        self.assertEqual(second_saved_item.parent_list, test_list)
 
 
 class ListViewTest(TestCase):
@@ -40,10 +50,11 @@ class ListViewTest(TestCase):
 
 
     def test_displays_all_items(self):
+        test_list = List.objects.create()
         text_1 = 'My item 1'
         text_2 = 'My item 2'
-        Item.objects.create(text=text_1)
-        Item.objects.create(text=text_2)
+        Item.objects.create(text=text_1, parent_list=test_list)
+        Item.objects.create(text=text_2, parent_list=test_list)
 
         response = self.client.get('/lists/the-only-list-in-the-world/')
 
