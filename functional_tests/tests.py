@@ -69,8 +69,8 @@ class NewVisitorTest(LiveServerTestCase):
         
         # The page updates again, and now shows both items on her list
         expected_list_item_2 = f'2: {list_item_2}'
-        self.wait_for_row_in_list_table(expected_list_item_1)
         self.wait_for_row_in_list_table(expected_list_item_2)
+        self.wait_for_row_in_list_table(expected_list_item_1)
 
         # Satisfied, she goes back to sleep.
 
@@ -128,10 +128,6 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertNotEqual(user_2_url, user_1_url)
 
         # Again, there's no trace of User 1's list
-        page_text = self.find_element_by_tag_name('body').text
+        page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn(user_1_item_1, page_text)
         self.assertIn(user_2_item_1, page_text)
-
-        # S
-        self.fail('Finish the test!')
-
