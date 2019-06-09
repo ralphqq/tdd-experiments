@@ -5,7 +5,7 @@ My output from following the lessons in the book [Test-Driven Development with P
 [Chapter 8: Prettification: Layout and Styling, and What to Test About It](http://www.obeythetestinggoat.com/book/chapter_prettification.html)
 
 ## Current Section
-What to Functionally Test About Layout and Style
+Django Template Inheritance
 
 ## Chapters Finished
 
