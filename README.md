@@ -5,7 +5,7 @@ My output from following the lessons in the book [Test-Driven Development with P
 [Chapter 9: Testing Deployment Using a Staging Site](http://www.obeythetestinggoat.com/book/chapter_manual_deployment.html)
 
 ## Current Section
-TDD and the Danger Areas of Deployment
+Getting a Domain Name
 
 ## Chapters Finished
 
