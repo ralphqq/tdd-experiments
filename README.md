@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 8: Prettification: Layout and Styling, and What to Test About It](http://www.obeythetestinggoat.com/book/chapter_prettification.html)
+[Chapter 9: Testing Deployment Using a Staging Site](http://www.obeythetestinggoat.com/book/chapter_manual_deployment.html)
 
 ## Current Section
-Using Bootstrap Components to Improve the Look of the Site
+TDD and the Danger Areas of Deployment
 
 ## Chapters Finished
 
@@ -17,3 +17,6 @@ Using Bootstrap Components to Improve the Look of the Site
 * [Chapter 5: Saving User Input: Testing the Database](http://www.obeythetestinggoat.com/book/chapter_post_and_database.html)
 * [Chapter 6: Improving Functional Tests: Ensuring Isolation and Removing Voodoo Sleeps](http://www.obeythetestinggoat.com/book/chapter_explicit_waits_1.html)
 * [Chapter 7: Working Incrementally](http://www.obeythetestinggoat.com/book/chapter_working_incrementally.html)
+
+### Part 2: Web Development Sine Qua Nons
+* [Chapter 8: Prettification: Layout and Styling, and What to Test About It](http://www.obeythetestinggoat.com/book/chapter_prettification.html)
