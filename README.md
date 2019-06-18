@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 9: Testing Deployment Using a Staging Site](http://www.obeythetestinggoat.com/book/chapter_manual_deployment.html)
+[Chapter 10: Getting to a Production-Ready Deployment](http://www.obeythetestinggoat.com/book/chapter_making_deployment_production_ready.html)
 
 ## Current Section
-Debugging a Deployment That Doesn’t Seem to Work at All
+What We Need to Do
 
 ## Chapters Finished
 
@@ -20,3 +20,4 @@ Debugging a Deployment That Doesn’t Seem to Work at All
 
 ### Part 2: Web Development Sine Qua Nons
 * [Chapter 8: Prettification: Layout and Styling, and What to Test About It](http://www.obeythetestinggoat.com/book/chapter_prettification.html)
+* [Chapter 9: Testing Deployment Using a Staging Site](http://www.obeythetestinggoat.com/book/chapter_manual_deployment.html)
