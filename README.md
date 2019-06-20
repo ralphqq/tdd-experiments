@@ -5,7 +5,7 @@ My output from following the lessons in the book [Test-Driven Development with P
 [Chapter 10: Getting to a Production-Ready Deployment](http://www.obeythetestinggoat.com/book/chapter_making_deployment_production_ready.html)
 
 ## Current Section
-What We Need to Do
+Using Environment Variables to Adjust Settings for Production
 
 ## Chapters Finished
 
