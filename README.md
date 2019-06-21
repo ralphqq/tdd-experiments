@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 10: Getting to a Production-Ready Deployment](http://www.obeythetestinggoat.com/book/chapter_making_deployment_production_ready.html)
+[Chapter 11: Automating Deployment with Fabric](http://www.obeythetestinggoat.com/book/chapter_automate_deployment_with_fabric.html)
 
 ## Current Section
-Using Systemd to Make Sure Gunicorn Starts on Boot
+Intro
 
 ## Chapters Finished
 
@@ -21,3 +21,4 @@ Using Systemd to Make Sure Gunicorn Starts on Boot
 ### Part 2: Web Development Sine Qua Nons
 * [Chapter 8: Prettification: Layout and Styling, and What to Test About It](http://www.obeythetestinggoat.com/book/chapter_prettification.html)
 * [Chapter 9: Testing Deployment Using a Staging Site](http://www.obeythetestinggoat.com/book/chapter_manual_deployment.html)
+* [Chapter 10: Getting to a Production-Ready Deployment](http://www.obeythetestinggoat.com/book/chapter_making_deployment_production_ready.html)
