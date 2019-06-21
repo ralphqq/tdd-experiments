@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn server for DOMAIN
+
+[Service]
+Restart=on-failure
+User=larpex
+WorkingDirectory=/home/larpex/sites/DOMAIN
+EnvironmentFile=/home/larpex/sites/DOMAIN/.env
+
+ExecStart=/home/larpex/sites/DOMAIN/virtualenv/bin/gunicorn \
+    --bind unix:/tmp/DOMAIN.socket \
+    superlist.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
