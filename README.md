@@ -5,7 +5,7 @@ My output from following the lessons in the book [Test-Driven Development with P
 [Chapter 11: Automating Deployment with Fabric](http://www.obeythetestinggoat.com/book/chapter_automate_deployment_with_fabric.html)
 
 ## Current Section
-Intro
+Trying It Out
 
 ## Chapters Finished
 
