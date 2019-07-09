@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 12: Splitting our tests into multiple files, and a generic wait helper](http://www.obeythetestinggoat.com/book/chapter_organising_test_files.html)
+[Chapter 13: Validation at the Database Layer](http://www.obeythetestinggoat.com/book/chapter_database_layer_validation.html)
 
 ## Current Section
-Start on a Validation FT: Preventing Blank Items
+Model-Layer Validation
 
 ## Chapters Finished
 
@@ -23,3 +23,4 @@ Start on a Validation FT: Preventing Blank Items
 * [Chapter 9: Testing Deployment Using a Staging Site](http://www.obeythetestinggoat.com/book/chapter_manual_deployment.html)
 * [Chapter 10: Getting to a Production-Ready Deployment](http://www.obeythetestinggoat.com/book/chapter_making_deployment_production_ready.html)
 * [Chapter 11: Automating Deployment with Fabric](http://www.obeythetestinggoat.com/book/chapter_automate_deployment_with_fabric.html)
+* [Chapter 12: Splitting our tests into multiple files, and a generic wait helper](http://www.obeythetestinggoat.com/book/chapter_organising_test_files.html)
