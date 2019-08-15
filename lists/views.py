@@ -29,13 +29,11 @@ def new_list(request):
 
 def view_list(request, list_id):
     this_list = List.objects.get(id=list_id)
+    if request.method == 'POST':
+        Item.objects.create(
+            text=request.POST['item_text'],
+            parent_list=this_list
+        )
+        return redirect(f'/lists/{this_list.id}/')
+
     return render(request, 'list.html', {'parent_list': this_list})
-
-
-def add_item(request, list_id):
-    this_list = List.objects.get(id=list_id)
-    Item.objects.create(
-        text=request.POST['item_text'],
-        parent_list=this_list
-    )
-    return redirect(f'/lists/{this_list.id}/')
