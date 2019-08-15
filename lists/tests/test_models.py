@@ -47,3 +47,11 @@ class ListAndItemModelTest(TestCase):
 
             # To get it to raise ValidationError
             item_obj.full_clean()
+
+
+    def test_get_absolute_url(self):
+        this_list = List.objects.create()
+        self.assertEqual(
+            this_list.get_absolute_url(),
+            f'/lists/{this_list.id}/'
+        )
