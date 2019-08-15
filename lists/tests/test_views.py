@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.utils.html import escape
 
 from lists.models import Item, List
 
@@ -70,6 +71,20 @@ class NewListTest(TestCase):
         )
 
 
+    def test_validation_errors_are_sent_to_homepage_template(self):
+        response = self.client.post('/lists/new', data={'item_text': ''})
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'home.html')
+
+        expected_error_msg = escape("You can't have an empty list item.")
+        self.assertContains(response, expected_error_msg)
+
+
+    def test_do_not_save_invalid_items(self):
+        response = self.client.post('/lists/new', data={'item_text': ''})
+        self.assertEqual(List.objects.count(), 0)
+        self.assertEqual(Item.objects.count(), 0)
+
 class NewItemTest(TestCase):
 
     def test_can_save_a_post_request_to_existing_list(self):
@@ -118,3 +133,4 @@ class NewItemTest(TestCase):
         )
 
         self.assertEqual(response.context['parent_list'], correct_list)
+

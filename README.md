@@ -5,7 +5,7 @@ My output from following the lessons in the book [Test-Driven Development with P
 [Chapter 13: Validation at the Database Layer](http://www.obeythetestinggoat.com/book/chapter_database_layer_validation.html)
 
 ## Current Section
-Model-Layer Validation
+Surfacing Model Validation Errors in the View
 
 ## Chapters Finished
 

@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.test import TestCase
 
 from lists.models import Item, List
@@ -34,3 +35,15 @@ class ListAndItemModelTest(TestCase):
         self.assertEqual(first_saved_item.parent_list, test_list)
         self.assertEqual(second_saved_item.parent_list, test_list)
 
+
+    def test_cannot_save_empty_list(self):
+        list_obj = List.objects.create()
+        item_obj = Item(parent_list=list_obj, text='')
+
+        with self.assertRaises(ValidationError):
+            # Django actually does not validate when saving
+            # so this does not raise ValidationError
+            # item_obj  .save()
+
+            # To get it to raise ValidationError
+            item_obj.full_clean()
