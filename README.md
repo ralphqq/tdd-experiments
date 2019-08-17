@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 13: Validation at the Database Layer](http://www.obeythetestinggoat.com/book/chapter_database_layer_validation.html)
+[Chapter 14: A Simple Form](http://www.obeythetestinggoat.com/book/chapter_simple_form.html)
 
 ## Current Section
-Surfacing Model Validation Errors in the View
+Moving Validation Logic into a Form
 
 ## Chapters Finished
 
@@ -24,3 +24,4 @@ Surfacing Model Validation Errors in the View
 * [Chapter 10: Getting to a Production-Ready Deployment](http://www.obeythetestinggoat.com/book/chapter_making_deployment_production_ready.html)
 * [Chapter 11: Automating Deployment with Fabric](http://www.obeythetestinggoat.com/book/chapter_automate_deployment_with_fabric.html)
 * [Chapter 12: Splitting our tests into multiple files, and a generic wait helper](http://www.obeythetestinggoat.com/book/chapter_organising_test_files.html)
+[Chapter 13: Validation at the Database Layer](http://www.obeythetestinggoat.com/book/chapter_database_layer_validation.html)
