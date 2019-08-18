@@ -13,7 +13,7 @@ def home_page(request):
 def new_list(request):
     parent_list = List.objects.create()
     item = Item(
-        text=request.POST['item_text'],
+        text=request.POST['text'],
         parent_list=parent_list
     )
 
@@ -35,7 +35,7 @@ def view_list(request, list_id):
     if request.method == 'POST':
         try:
             item = Item(
-                text=request.POST['item_text'],
+                text=request.POST['text'],
                 parent_list=this_list
             )
             item.full_clean()

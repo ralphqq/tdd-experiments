@@ -16,7 +16,7 @@ class NewVisitorTest(FunctionalTest):
         self.assertIn('To-Do', header_text)
 
         # She is invited to enter a to-do item straight away
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         self.assertEqual(
             input_box.get_attribute('placeholder'),
             'Enter a to-do- item'
@@ -35,7 +35,7 @@ class NewVisitorTest(FunctionalTest):
         # There is still a text box inviting her to add another item. She
         # enters "Use peacock feathers to make a fly"
         list_item_2 = 'Use peacock feathers to make a fly'
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         input_box.send_keys(list_item_2)
         input_box.send_keys(Keys.ENTER)
         
@@ -51,14 +51,14 @@ class NewVisitorTest(FunctionalTest):
         # User 1 starts a new list
         # She enters two items into the list
         self.browser.get(self.live_server_url)
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         user_1_item_1 = 'Get drunk like a skunk'
         input_box.send_keys(user_1_item_1)
         input_box.send_keys(Keys.ENTER)
         expected_list_item_1 = f'1: {user_1_item_1}'
         self.wait_for_row_in_list_table(expected_list_item_1)
 
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         user_1_item_2 = 'Be high in the sky'
         input_box.send_keys(user_1_item_2)
         input_box.send_keys(Keys.ENTER)
@@ -87,7 +87,7 @@ class NewVisitorTest(FunctionalTest):
         self.assertNotIn(user_1_item_2, page_text)
 
         # User 2 starts a new list
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         user_2_item_1 = 'Buy some catfood'
         input_box.send_keys(user_2_item_1)
         input_box.send_keys(Keys.ENTER)

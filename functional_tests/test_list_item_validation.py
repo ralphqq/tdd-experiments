@@ -10,7 +10,7 @@ class ItemValidationTes(FunctionalTest):
         # User goes to the home page and accidentally tries to submit
         # an empty list item. She hits Enter on the empty input box
         self.browser.get(self.live_server_url)
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         input_box.send_keys(Keys.ENTER)
 
         # The home page refreshes, and there is an error message saying
@@ -23,7 +23,7 @@ class ItemValidationTes(FunctionalTest):
         )
 
         # She tries again with some text for the item, which now works
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         some_list_entry = 'Buy milk'
         input_box.send_keys(some_list_entry)
         input_box.send_keys(Keys.ENTER)
@@ -32,7 +32,7 @@ class ItemValidationTes(FunctionalTest):
         self.wait_for_row_in_list_table(expected_text)
 
         # Interestingly, she now decides to submit a second blank list item
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         input_box.send_keys(Keys.ENTER)
 
         # She receives a similar warning on the list page
@@ -44,7 +44,7 @@ class ItemValidationTes(FunctionalTest):
         )
 
         # And she can correct it by filling some text in
-        input_box = self.browser.find_element_by_id('id_new_item')
+        input_box = self.get_item_input_box()
         some_list_entry_2 = 'Brew coffee'
         input_box.send_keys(some_list_entry_2)
         input_box.send_keys(Keys.ENTER)
