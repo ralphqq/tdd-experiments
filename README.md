@@ -5,7 +5,7 @@ My output from following the lessons in the book [Test-Driven Development with P
 [Chapter 14: A Simple Form](http://www.obeythetestinggoat.com/book/chapter_simple_form.html)
 
 ## Current Section
-Moving Validation Logic into a Form
+A Big Find and Replace
 
 ## Chapters Finished
 
