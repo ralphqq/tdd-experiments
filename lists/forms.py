@@ -18,3 +18,7 @@ class ItemForm(forms.models.ModelForm):
         error_messages = {
             'text': {'required': BLANK_ITEM_ERROR}
         }
+
+    def save(self, for_list):
+        self.instance.parent_list = for_list
+        return super().save()

@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 14: A Simple Form](http://www.obeythetestinggoat.com/book/chapter_simple_form.html)
+[Chapter 15: More Advanced Forms]()
 
 ## Current Section
-A Big Find and Replace
+[Another FT for Duplicate Items](#)
 
 ## Chapters Finished
 
@@ -25,3 +25,4 @@ A Big Find and Replace
 * [Chapter 11: Automating Deployment with Fabric](http://www.obeythetestinggoat.com/book/chapter_automate_deployment_with_fabric.html)
 * [Chapter 12: Splitting our tests into multiple files, and a generic wait helper](http://www.obeythetestinggoat.com/book/chapter_organising_test_files.html)
 * [Chapter 13: Validation at the Database Layer](http://www.obeythetestinggoat.com/book/chapter_database_layer_validation.html)
+* [Chapter 14: A Simple Form](http://www.obeythetestinggoat.com/book/chapter_simple_form.html)
