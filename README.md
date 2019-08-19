@@ -5,7 +5,7 @@ My output from following the lessons in the book [Test-Driven Development with P
 [Chapter 15: More Advanced Forms]()
 
 ## Current Section
-[Another FT for Duplicate Items](#)
+Another FT for Duplicate Items
 
 ## Chapters Finished
 
