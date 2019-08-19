@@ -2,7 +2,7 @@ from django.core.exceptions import ValidationError
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
-from lists.forms import ItemForm
+from lists.forms import ItemForm, BLANK_ITEM_ERROR
 from lists.models import Item, List
 
 
@@ -11,41 +11,33 @@ def home_page(request):
 
 
 def new_list(request):
-    parent_list = List.objects.create()
-    item = Item(
-        text=request.POST['text'],
-        parent_list=parent_list
-    )
-
-    try:
-        item.full_clean()
-        item.save()
-    except ValidationError:
-        parent_list.delete()
-        error = "You can't have an empty list item."
-        return render(request, 'home.html', {'error': error})
-
-    return redirect(parent_list)
+    form = ItemForm(data=request.POST)
+    if form.is_valid():
+        parent_list = List.objects.create()
+        item = Item.objects.create(
+            text=request.POST['text'],
+            parent_list=parent_list
+        )
+        return redirect(parent_list)
+    else:
+        return render(request, 'home.html', {'form': form})
 
 
 def view_list(request, list_id):
     this_list = List.objects.get(id=list_id)
-    error = None
+    form = ItemForm()
 
     if request.method == 'POST':
-        try:
-            item = Item(
+        form = ItemForm(data=request.POST)
+        if form.is_valid():
+            item = Item.objects.create(
                 text=request.POST['text'],
                 parent_list=this_list
             )
-            item.full_clean()
-            item.save()
             return redirect(this_list)
-        except ValidationError:
-            error = "You can't have an empty list item."
 
     return render(
         request,
         'list.html',
-        {'parent_list': this_list, 'error': error}
+        {'parent_list': this_list, 'form': form}
     )
