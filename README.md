@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 15: More Advanced Forms]()
+[Chapter 16: Dipping Our Toes, Very Tentatively, into JavaScript](http://www.obeythetestinggoat.com/book/chapter_javascript.html)
 
 ## Current Section
-Another FT for Duplicate Items
+Starting with an FT
 
 ## Chapters Finished
 
@@ -26,3 +26,4 @@ Another FT for Duplicate Items
 * [Chapter 12: Splitting our tests into multiple files, and a generic wait helper](http://www.obeythetestinggoat.com/book/chapter_organising_test_files.html)
 * [Chapter 13: Validation at the Database Layer](http://www.obeythetestinggoat.com/book/chapter_database_layer_validation.html)
 * [Chapter 14: A Simple Form](http://www.obeythetestinggoat.com/book/chapter_simple_form.html)
+* [Chapter 15: More Advanced Forms](http://www.obeythetestinggoat.com/book/chapter_advanced_forms.html)
