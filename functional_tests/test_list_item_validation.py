@@ -65,13 +65,14 @@ class ItemValidationTes(FunctionalTest):
         self.wait_for_row_in_list_table(f'1: {list_item}')
 
         # She accidentally re-enters the same entry.
+        input_box = self.get_item_input_box()
         input_box.send_keys(list_item)
         input_box.send_keys(Keys.ENTER)
 
         # She sees a helpful error message.
         self.wait_for(
             lambda: self.assertEqual(
-                self.find_element_by_css_selector('.has-error').text,
+                self.browser.find_element_by_css_selector('.has-error').text,
                 "You've already got this in your list"
             )
         )

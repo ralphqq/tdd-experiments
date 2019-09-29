@@ -2,7 +2,10 @@ from django.core.exceptions import ValidationError
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
-from lists.forms import ItemForm, BLANK_ITEM_ERROR
+from lists.forms import (
+    BLANK_ITEM_ERROR, DUPLICATE_ITEM_ERROR,
+    ExistingListItemForm, ItemForm
+)
 from lists.models import Item, List
 
 
@@ -22,12 +25,15 @@ def new_list(request):
 
 def view_list(request, list_id):
     this_list = List.objects.get(id=list_id)
-    form = ItemForm()
+    form = ExistingListItemForm(for_list=this_list)
 
     if request.method == 'POST':
-        form = ItemForm(data=request.POST)
+        form = ExistingListItemForm(
+            for_list=this_list,
+            data=request.POST
+        )
         if form.is_valid():
-            form.save(for_list=this_list)
+            form.save()
             return redirect(this_list)
 
     return render(
