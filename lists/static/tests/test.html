@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Javascript tests</title>
+
+  <!-- QUnit theme -->
+  <link rel="stylesheet" src="https://code.jquery.com/qunit/qunit-2.9.2.css" integrity="sha256-toepOe5D+ddXgUOGsijnhymZna5bakJ0gwRC/3bK1b0=" crossorigin="anonymous">
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <form>
+      <input name="text">
+      <div class="has-error">Error message here</div>
+    </form>
+  </div>
+
+  <!-- jQuery and bootstrap stuff -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Standalone js files -->
+  <script src="../lists.js"></script>
+
+  <!-- QUnit JS module from jQUERY CDN -->
+  <script src="https://code.jquery.com/qunit/qunit-2.9.2.js" integrity="sha256-EQ5rv6kPFPKQUYY+P4H6fm/le+yFRLVAb//2PfBswfE=" crossorigin="anonymous"></script>
+
+  <!-- Tests -->
+  <script>
+
+QUnit.test("Errors should be hidden on keydown", function (assert) {
+  window.Superlist.initialize();
+  $('input[name="text"]').keydown();
+  assert.equal($('.has-error').is(':visible'), false);
+});
+
+QUnit.test("Errors are not hidden unless there is is keydown", function(assert) {
+  window.Superlist.initialize();
+  assert.equal($('.has-error').is(':visible'), true);
+});
+
+  </script>
+</body>
+</html>
