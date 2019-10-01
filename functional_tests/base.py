@@ -1,3 +1,4 @@
+import logging
 import os
 import time
 
@@ -8,6 +9,8 @@ from selenium.common.exceptions import WebDriverException
 
 MAX_WAIT = 10   # seconds
 
+logging.basicConfig(level=logging.INFO)
+
 
 class FunctionalTest(StaticLiveServerTestCase):
 
@@ -16,6 +19,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         staging_server = os.environ.get('STAGING_SERVER')
         if staging_server:
             self.live_server_url = f'http://{staging_server}'
+        logging.info(f'Accessing {self.live_server_url}')
 
 
     def tearDown(self):
