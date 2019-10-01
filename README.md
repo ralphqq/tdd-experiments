@@ -2,7 +2,7 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[Chapter 16: Dipping Our Toes, Very Tentatively, into JavaScript](http://www.obeythetestinggoat.com/book/chapter_javascript.html)
+[• Chapter 17: Deploying Our New Code](http://www.obeythetestinggoat.com/book/chapter_deploying_validation.html)
 
 ## Current Section
 Starting with an FT
@@ -27,3 +27,4 @@ Starting with an FT
 * [Chapter 13: Validation at the Database Layer](http://www.obeythetestinggoat.com/book/chapter_database_layer_validation.html)
 * [Chapter 14: A Simple Form](http://www.obeythetestinggoat.com/book/chapter_simple_form.html)
 * [Chapter 15: More Advanced Forms](http://www.obeythetestinggoat.com/book/chapter_advanced_forms.html)
+* [Chapter 16: Dipping Our Toes, Very Tentatively, into JavaScript](http://www.obeythetestinggoat.com/book/chapter_javascript.html)
