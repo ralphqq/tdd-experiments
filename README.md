@@ -2,10 +2,10 @@
 My output from following the lessons in the book [Test-Driven Development with Python](http://www.obeythetestinggoat.com/pages/book.html#toc).
 
 ## Current Chapter
-[• Chapter 17: Deploying Our New Code](http://www.obeythetestinggoat.com/book/chapter_deploying_validation.html)
+[Chapter 18: User Authentication, Spiking and De-Spiking](http://www.obeythetestinggoat.com/book/chapter_spiking_custom_auth.html)
 
 ## Current Section
-Starting with an FT
+Passwordless Auth
 
 ## Chapters Finished
 
@@ -28,3 +28,6 @@ Starting with an FT
 * [Chapter 14: A Simple Form](http://www.obeythetestinggoat.com/book/chapter_simple_form.html)
 * [Chapter 15: More Advanced Forms](http://www.obeythetestinggoat.com/book/chapter_advanced_forms.html)
 * [Chapter 16: Dipping Our Toes, Very Tentatively, into JavaScript](http://www.obeythetestinggoat.com/book/chapter_javascript.html)
+[• Chapter 17: Deploying Our New Code](http://www.obeythetestinggoat.com/book/chapter_deploying_validation.html)
+
+### Part 3: More Advanced Topics
