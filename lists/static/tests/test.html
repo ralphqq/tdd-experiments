@@ -37,7 +37,13 @@ QUnit.test("Errors should be hidden on keydown", function (assert) {
   assert.equal($('.has-error').is(':visible'), false);
 });
 
-QUnit.test("Errors are not hidden unless there is is keydown", function(assert) {
+QUnit.test("Errors should be hidden on mouse click", function(assert) {
+  window.Superlist.initialize();
+  $('input[name="text"]').click();
+  assert.equal($('.has-error').is(':visible'), false);
+});
+
+QUnit.test("Errors are not hidden unless there is keydown or mouse click", function(assert) {
   window.Superlist.initialize();
   assert.equal($('.has-error').is(':visible'), true);
 });
